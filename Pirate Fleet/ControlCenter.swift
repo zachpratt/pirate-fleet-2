@@ -28,7 +28,7 @@ struct Ship {
             
             // Hint: The cells getter should return an array of GridLocations.
             var occupiedCells = [GridLocation]()
-            
+            occupiedCells.append(GridLocation(x: start.x, y: start.y))
             if self.isVertical {
                 for y in start.y...end.y {
                     occupiedCells.append(GridLocation(x: start.x, y: y + 1))
@@ -46,19 +46,33 @@ struct Ship {
 // TODO: Add a getter for sunk. Calculate the value returned using hitTracker.cellsHit.
     var sunk: Bool {
         
-        //Does the hit tracker log hites for the whole board?
-        //Need to compare the occupiedCells array to the hitTracker dictionary to see if all the cells in occipiedCells are hit
         for cell in cells {
-            
+            if hitTracker.cellsHit[cell] == false {
+                return false
+            }
         }
         
-        return false
+        return true
     }
 
 // TODO: Add custom initializers
 //    init(length: Int) {
 //        self.length = length
 //        self.hitTracker = HitTracker()
+//    }
+    
+//    init(length: Int, location: GridLocation, isVertical: Bool){
+//        self.length = length
+//        self.hitTracker = HitTracker()
+//        self.isVertical = isVertical
+//        self.isWooden = false
+//    }
+//    
+//    init(length: Int, location: GridLocation, isVertical: Bool, isWooden: Bool) {
+//        self.length = length
+//        self.hitTracker = HitTracker()
+//        self.isVertical = isVertical
+//        self.isWooden = isWooden
 //    }
 }
 
