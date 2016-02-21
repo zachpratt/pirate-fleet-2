@@ -163,11 +163,11 @@ extension PirateFleetViewController: PlayerDelegate {
         if let penaltyCell = player.lastHitPenaltyCell {
             
 // TODO:Uncomment once PenaltyCell protocol has been implemented
-//            if penaltyCell.guaranteesHit {
-//                attackedPlayer.availableMoves.append(.GuaranteedHit)
-//            } else {
-//                attackedPlayer.availableMoves.append(.NormalMove)
-//            }
+            if penaltyCell.guaranteesHit {
+                attackedPlayer.availableMoves.append(.GuaranteedHit)
+            } else {
+                attackedPlayer.availableMoves.append(.NormalMove)
+            }
 
             
             // mine penalty
