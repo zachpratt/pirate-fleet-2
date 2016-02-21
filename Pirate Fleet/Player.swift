@@ -241,10 +241,10 @@ class Player {
         // random seamonster placement
         for _ in 0..<numberOfSeamonsters {
             var location = RandomGridLocation()
-            var seaMonster = SeaMonster(location: location)
+            var seaMonster = SeaMonster(location: location, penaltyText: "Whoa Nessie!")
             while !gridViewController.addSeamonster(seaMonster, playerType: .Computer) {
                 location = RandomGridLocation()
-                seaMonster = SeaMonster(location: location)
+                seaMonster = SeaMonster(location: location, penaltyText: "Whoa Nessie!")
             }
         }
     }
