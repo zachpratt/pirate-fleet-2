@@ -46,8 +46,8 @@ struct Settings {
         static let ShipsMinesMonstersNotReady = "NOTE: You need one small ship (size of 2), two medium ships (size of 3), one large ship (size of 4), one x-large ship (size of 5), two mines, and two sea monsters."
         static let HumanHitMine = "You've hit a mine! The computer has been rewarded an extra move on their next turn."
         static let ComputerHitMine = "The computer has hit a mine! You've been awarded an extra move on your next turn."
-        static let HumanHitMonster = "You've hit a sea monster! RIGHT NOW THE COMPUTER WILL JUST TAKE AN EXTRA TURN..."
-        static let ComputerHitMonster = "The computer has hit a sea monster! RIGHT NOW WE'LL JUST SKIP THE COMPUTER'S NEXT TURN..."
+        static let HumanHitMonster = "You've hit a sea monster! Look out! You lose a turn..."
+        static let ComputerHitMonster = "The computer has hit a sea monster! Take another turn!..."
         static let ResetAction = "Reset Game"
         static let DismissAction = "Continue"
     }
