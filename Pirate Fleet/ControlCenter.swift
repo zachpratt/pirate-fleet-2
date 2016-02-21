@@ -61,19 +61,21 @@ struct Ship {
 //        self.hitTracker = HitTracker()
 //    }
     
-//    init(length: Int, location: GridLocation, isVertical: Bool){
-//        self.length = length
-//        self.hitTracker = HitTracker()
-//        self.isVertical = isVertical
-//        self.isWooden = false
-//    }
-//    
-//    init(length: Int, location: GridLocation, isVertical: Bool, isWooden: Bool) {
-//        self.length = length
-//        self.hitTracker = HitTracker()
-//        self.isVertical = isVertical
-//        self.isWooden = isWooden
-//    }
+    init(length: Int, location: GridLocation, isVertical: Bool){
+        self.length = length
+        self.hitTracker = HitTracker()
+        self.isVertical = isVertical
+        self.isWooden = false
+        self.location = location
+    }
+    
+    init(length: Int, location: GridLocation, isVertical: Bool, isWooden: Bool) {
+        self.length = length
+        self.hitTracker = HitTracker()
+        self.isVertical = isVertical
+        self.isWooden = isWooden
+        self.location = location
+    }
 }
 
 // TODO: Change Cell protocol to PenaltyCell and add the desired properties
@@ -96,20 +98,20 @@ class ControlCenter {
     
     func placeItemsOnGrid(human: Human) {
         
-        let smallShip = Ship(length: 2, location: GridLocation(x: 3, y: 4), isVertical: true, isWooden: false, hitTracker: HitTracker())
+        let smallShip = Ship(length: 2, location: GridLocation(x: 3, y: 4), isVertical: true, isWooden: true)
         human.addShipToGrid(smallShip)
         print(smallShip.cells)
         
-        let mediumShip1 = Ship(length: 3, location: GridLocation(x: 0, y: 0), isVertical: false, isWooden: false, hitTracker: HitTracker())
+        let mediumShip1 = Ship(length: 3, location: GridLocation(x: 0, y: 0), isVertical: false)
         human.addShipToGrid(mediumShip1)
         
-        let mediumShip2 = Ship(length: 3, location: GridLocation(x: 3, y: 1), isVertical: false, isWooden: false, hitTracker: HitTracker())
+        let mediumShip2 = Ship(length: 3, location: GridLocation(x: 3, y: 1), isVertical: false)
         human.addShipToGrid(mediumShip2)
         
-        let largeShip = Ship(length: 4, location: GridLocation(x: 6, y: 3), isVertical: true, isWooden: false, hitTracker: HitTracker())
+        let largeShip = Ship(length: 4, location: GridLocation(x: 6, y: 3), isVertical: true)
         human.addShipToGrid(largeShip)
         
-        let xLargeShip = Ship(length: 5, location: GridLocation(x: 7, y: 2), isVertical: true, isWooden: false, hitTracker: HitTracker())
+        let xLargeShip = Ship(length: 5, location: GridLocation(x: 7, y: 2), isVertical: true)
         human.addShipToGrid(xLargeShip)
         
         let mine1 = Mine(location: GridLocation(x: 6, y: 0))

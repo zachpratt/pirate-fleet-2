@@ -218,12 +218,12 @@ class Player {
                 
                 var shipLocation = RandomGridLocation()
                 var vertical = Int(arc4random_uniform(UInt32(2))) == 0 ? true : false
-                var ship = Ship(length: shipLength, location: shipLocation, isVertical: vertical, isWooden: false, hitTracker: HitTracker())
+                var ship = Ship(length: shipLength, location: shipLocation, isVertical: vertical)
                 
                 while !gridViewController.addShip(ship, playerType: .Computer) {
                     shipLocation = RandomGridLocation()
                     vertical = Int(arc4random_uniform(UInt32(2))) == 0 ? true : false
-                    ship = Ship(length: shipLength, location: shipLocation, isVertical: vertical, isWooden: false, hitTracker: HitTracker())
+                    ship = Ship(length: shipLength, location: shipLocation, isVertical: vertical)
                 }
             }
         }
